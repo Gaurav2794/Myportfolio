@@ -35,3 +35,15 @@ body,
     scroll-behavior: auto !important;
   }
 }
+@media (pointer: fine) {
+
+  body{
+      cursor:none;
+  }
+
+  a,
+  button{
+      cursor:none;
+  }
+
+}

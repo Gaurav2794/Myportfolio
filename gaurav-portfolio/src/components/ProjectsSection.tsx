@@ -34,71 +34,157 @@ const PROJECTS: Project[] = [
     number: "01",
     category: "Product Publication",
     name: "Everskin Aesthetics & The Momos Hub Pune",
-    href: "#", // TODO: replace with real link
+    href: "#",
     images: [
-      { src: clientWork1, description: "Everskin Aesthetics" },
-      { src: clientWork2, description: "Everskin Aesthetics" },
-      { src: clientWork3, description: "The Momos Hub Pune." },
-      { src: clientWork4, description: "The Momos Hub Pune" },
+      {
+        src: clientWork1,
+        title: "Laser Hair Removal",
+        description:
+          "Premium Instagram campaign designed for Everskin Aesthetics.",
+      },
+      {
+        src: clientWork2,
+        title: "Hydra Facial",
+        description: "Luxury skincare promotional creative for Everskin.",
+      },
+      {
+        src: clientWork3,
+        title: "The Momos Hub",
+        description: "Social media food advertisement for The Momos Hub Pune.",
+      },
+      {
+        src: clientWork4,
+        title: "Special Combo",
+        description:
+          "Restaurant promotional design highlighting signature meals.",
+      },
     ],
   },
+
   {
     number: "02",
     category: "Event Management & Branding",
     name: "CSI DYPDPU",
-    href: "https://www.instagram.com/csidit/", // TODO: replace with real link
+    href: "https://www.instagram.com/csidit/",
     images: [
       {
         src: csi1,
-        description: "Event branding and stage setup design for CSI DYPDPU.",
+        title: "Event Branding",
+        description: "Brand identity and promotional creatives for CSI DYPDPU.",
       },
       {
         src: csi2,
-        description: "On-ground event production and coordination visuals.",
+        title: "Event Production",
+        description: "On-ground event execution and coordination visuals.",
       },
       {
         src: csi3,
-        description: "Post-event highlight and social recap creative.",
+        title: "Event Highlights",
+        description: "Social media recap and post-event campaign design.",
       },
     ],
   },
+
   {
     number: "03",
     category: "Social Media Campaign",
     name: "DYPDPU Engineering",
-    href: "https://www.instagram.com/dypdpu.engineering/", // TODO: replace with real link
+    href: "https://www.instagram.com/dypdpu.engineering/",
     images: [
       {
         src: dyp1,
-        description: "Campaign kickoff creative for DYPDPU Engineering.",
+        title: "Campaign Launch",
+        description: "Opening campaign creative for DYPDPU Engineering.",
       },
-      { src: dyp2, description: "Departmental highlight post design." },
-      { src: dyp3, description: "Student achievement feature graphic." },
-      { src: dyp4, description: "Event announcement creative." },
-      { src: dyp5, description: "Recruitment drive social post." },
-      { src: dyp6, description: "Workshop promotional design." },
-      { src: dyp7, description: "Faculty spotlight creative." },
-      { src: dyp8, description: "Campus activity recap post." },
-      { src: dyp9, description: "Technical fest announcement graphic." },
-      { src: dyp10, description: "Alumni feature design." },
-      { src: dyp11, description: "Placement drive highlight post." },
-      { src: dyp12, description: "Engineering week celebration creative." },
-      { src: dyp13, description: "Year-end wrap-up campaign visual." },
+      {
+        src: dyp2,
+        title: "Department Highlight",
+        description: "Department promotional social media design.",
+      },
+      {
+        src: dyp3,
+        title: "Student Achievement",
+        description: "Creative celebrating outstanding student achievements.",
+      },
+      {
+        src: dyp4,
+        title: "Event Announcement",
+        description: "Promotional design for engineering events.",
+      },
+      {
+        src: dyp5,
+        title: "Admissions Campaign",
+        description: "Creative supporting admissions and recruitment.",
+      },
+      {
+        src: dyp6,
+        title: "Workshop Promotion",
+        description: "Workshop promotional poster for students.",
+      },
+      {
+        src: dyp7,
+        title: "Faculty Spotlight",
+        description: "Social media post introducing faculty members.",
+      },
+      {
+        src: dyp8,
+        title: "Campus Activities",
+        description: "Highlights from campus activities and events.",
+      },
+      {
+        src: dyp9,
+        title: "Technical Fest",
+        description: "Technical festival announcement campaign.",
+      },
+      {
+        src: dyp10,
+        title: "Alumni Feature",
+        description: "Creative highlighting successful alumni.",
+      },
+      {
+        src: dyp11,
+        title: "Placement Drive",
+        description: "Placement campaign for final-year students.",
+      },
+      {
+        src: dyp12,
+        title: "Engineering Week",
+        description: "Special creative celebrating Engineering Week.",
+      },
+      {
+        src: dyp13,
+        title: "Year in Review",
+        description: "Year-end social media wrap-up campaign.",
+      },
     ],
   },
+
   {
     number: "04",
-    category: "Personal Creative work and social media",
+    category: "Personal Creative Work",
     name: "Personal Projects",
-    href: "https://www.instagram.com/gaurav_027_/", // TODO: replace with real link
+    href: "https://www.instagram.com/gaurav_027_/",
     images: [
       {
         src: p1,
-        description: "coursoul post for Sanskriti 2025",
+        title: "Sanskriti 2025",
+        description: "Carousel post designed for Sanskriti 2025.",
       },
-      { src: p2, description: "coursoul post for Sanskriti 2025" },
-      { src: p3, description: "coursoul post for Acunetix 2026" },
-      { src: p4, description: "coursoul post for Acunetix 2026" },
+      {
+        src: p2,
+        title: "Sanskriti Promotion",
+        description: "Festival branding and social media carousel.",
+      },
+      {
+        src: p3,
+        title: "Acunetix 2026",
+        description: "Creative campaign for Acunetix 2026.",
+      },
+      {
+        src: p4,
+        title: "Brand Promotion",
+        description: "Instagram campaign designed for Acunetix.",
+      },
     ],
   },
 ];
