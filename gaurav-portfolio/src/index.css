@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg: #0c0c0c;
+  --accent: #7621b0;
+  --accent-light: #b66cff;
+  --text-muted: #d7e2ea;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -11,8 +18,12 @@ body,
 #root {
   margin: 0;
   padding: 0;
-  background: #0c0c0c;
+  background: var(--bg);
   font-family: 'Kanit', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .hero-heading {
@@ -23,11 +34,41 @@ body,
 }
 
 ::selection {
-  background: #b600a8;
+  background: var(--accent);
   color: #fff;
 }
 
+/* Keyboard accessibility: the custom cursor hides the native pointer on
+   fine-pointer devices, so a clear focus ring matters more here, not less. */
+:focus-visible {
+  outline: 2px solid var(--accent-light);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 999px;
+  border: 2px solid var(--bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   * {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
@@ -35,15 +76,14 @@ body,
     scroll-behavior: auto !important;
   }
 }
-@media (pointer: fine) {
 
-  body{
-      cursor:none;
+@media (pointer: fine) {
+  body {
+    cursor: none;
   }
 
   a,
-  button{
-      cursor:none;
+  button {
+    cursor: none;
   }
-
 }

@@ -1,3 +1,5 @@
+import { useMemo, useState } from "react";
+import { motion } from "framer-motion";
 import FadeIn from "./FadeIn";
 import ProjectCard, { type Project } from "./ProjectCard";
 
@@ -35,6 +37,7 @@ const PROJECTS: Project[] = [
     category: "Product Publication",
     name: "Everskin Aesthetics & The Momos Hub Pune",
     href: "#",
+    tags: ["Client Work", "Instagram", "Photoshop"],
     images: [
       {
         src: clientWork1,
@@ -66,6 +69,7 @@ const PROJECTS: Project[] = [
     category: "Event Management & Branding",
     name: "CSI DYPDPU",
     href: "https://www.instagram.com/csidit/",
+    tags: ["Event Production", "Brand Identity"],
     images: [
       {
         src: csi1,
@@ -90,6 +94,7 @@ const PROJECTS: Project[] = [
     category: "Social Media Campaign",
     name: "DYPDPU Engineering",
     href: "https://www.instagram.com/dypdpu.engineering/",
+    tags: ["Social Media Management", "Campaign Strategy"],
     images: [
       {
         src: dyp1,
@@ -164,6 +169,7 @@ const PROJECTS: Project[] = [
     category: "Personal Creative Work",
     name: "Personal Projects",
     href: "https://www.instagram.com/gaurav_027_/",
+    tags: ["Self-Initiated", "Illustrator"],
     images: [
       {
         src: p1,
@@ -190,6 +196,17 @@ const PROJECTS: Project[] = [
 ];
 
 export default function ProjectsSection() {
+  const categories = useMemo(
+    () => ["All", ...new Set(PROJECTS.map((p) => p.category))],
+    [],
+  );
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const filteredProjects =
+    activeCategory === "All"
+      ? PROJECTS
+      : PROJECTS.filter((p) => p.category === activeCategory);
+
   return (
     <section
       id="work"
@@ -197,19 +214,46 @@ export default function ProjectsSection() {
     >
       <FadeIn>
         <h2
-          className="hero-heading mb-16 text-center font-black uppercase leading-none tracking-tight sm:mb-20 md:mb-28"
+          className="hero-heading mb-10 text-center font-black uppercase leading-none tracking-tight sm:mb-12 md:mb-16"
           style={{ fontSize: "clamp(3rem,12vw,160px)" }}
         >
           Projects
         </h2>
       </FadeIn>
+
+      <FadeIn delay={0.1}>
+        <div
+          className="mb-16 flex flex-wrap items-center justify-center gap-3 sm:mb-20 md:mb-28"
+          role="group"
+          aria-label="Filter projects by category"
+        >
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              aria-pressed={activeCategory === category}
+              className="relative rounded-full px-5 py-2.5 text-sm font-medium uppercase tracking-wide text-white/70 transition hover:text-white"
+            >
+              {activeCategory === category && (
+                <motion.span
+                  layoutId="active-category-pill"
+                  transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                  className="absolute inset-0 rounded-full border border-[#7621B0] bg-[#7621B0]/20"
+                />
+              )}
+              <span className="relative">{category}</span>
+            </button>
+          ))}
+        </div>
+      </FadeIn>
+
       <div className="mx-auto flex max-w-7xl flex-col gap-10">
-        {PROJECTS.map((project, index) => (
+        {filteredProjects.map((project, index) => (
           <ProjectCard
             key={project.number}
             project={project}
             index={index}
-            totalCards={PROJECTS.length}
+            totalCards={filteredProjects.length}
           />
         ))}
       </div>
